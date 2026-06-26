@@ -194,28 +194,6 @@ body::after {
     margin: 0 auto 40px;
 }
 
-.hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--neon);
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 16px 36px;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-}
-
-.hero-cta:hover {
-    background: #cbff33;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(184, 255, 0, 0.3);
-}
-
 /* === SECTIONS BASE === */
 .section {
     padding: 100px 24px;
@@ -481,47 +459,104 @@ body::after {
 /* === SERVICIOS === */
 .servicios { text-align: left; }
 
-.servicios-header { margin-bottom: 56px; }
-
-.grid-servicios {
+.servicios-wrap {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: 340px 1fr;
+    gap: 80px;
+    align-items: start;
 }
 
-.card-servicio {
+.servicios-header { position: sticky; top: 100px; }
+
+.lista-servicios {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.servicio-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 28px;
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: 32px 28px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: transparent;
     transition: var(--transition);
 }
 
-.card-servicio:hover {
+.servicio-item:hover {
     border-color: var(--border-neon);
     background: var(--bg-card-hover);
-    transform: translateY(-3px);
+    transform: translateX(4px);
 }
 
-.servicio-icono {
-    font-size: 2rem;
-    margin-bottom: 16px;
-    line-height: 1;
+.servicio-item:hover::before {
+    background: var(--neon);
 }
 
-.card-servicio h4 {
+.servicio-extra:hover::before {
+    background: #ff9f43;
+}
+
+.servicio-num {
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    min-width: 28px;
+    flex-shrink: 0;
+}
+
+.servicio-info { flex: 1; }
+
+.servicio-info h4 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
     color: var(--text-primary);
     letter-spacing: 0.04em;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 }
 
-.card-servicio p {
-    font-size: 0.88rem;
+.servicio-info p {
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    line-height: 1.7;
     font-weight: 300;
+    line-height: 1.5;
+}
+
+.servicio-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neon);
+    border: 1px solid var(--border-neon);
+    background: var(--neon-dim);
+    padding: 5px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.servicio-tag--extra {
+    color: #ff9f43;
+    border-color: rgba(255, 159, 67, 0.35);
+    background: rgba(255, 159, 67, 0.08);
 }
 
 /* === MEMBRESÍAS === */
@@ -781,6 +816,8 @@ body::after {
 /* === RESPONSIVE === */
 @media (max-width: 1100px) {
     .grid-precios { grid-template-columns: repeat(2, 1fr); }
+    .servicios-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .servicios-header { position: static; }
 }
 
 @media (max-width: 900px) {
@@ -802,8 +839,6 @@ body::after {
         grid-column: span 1;
         aspect-ratio: 4/3;
     }
-
-    .grid-servicios { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -820,9 +855,11 @@ body::after {
         font-size: 0.8rem;
     }
 
-    .grid-servicios { grid-template-columns: 1fr; }
     .grid-precios { grid-template-columns: 1fr; }
     .grid-precios-base { grid-template-columns: 1fr; max-width: 100%; }
+
+    .servicio-item { flex-wrap: wrap; gap: 12px; }
+    .servicio-tag { align-self: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
