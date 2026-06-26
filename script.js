@@ -1,22 +1,27 @@
-// Seleccionamos todas las tarjetas de instalaciones y precios
-const elementosAnimar = document.querySelectorAll('.card, .card-precio');
+// === Navbar: efecto al hacer scroll ===
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+}, { passive: true });
 
-// Configuramos el observador
+// === Animaciones de entrada con Intersection Observer ===
+const elementosAnimar = document.querySelectorAll('.card, .card-precio, .galeria-item, .sucursal-banner, .card-servicio');
+
 const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
-        // Si la tarjeta ya es visible en la pantalla
         if (entrada.isIntersecting) {
-            // Le agregamos la clase 'visible' para activar la animación CSS
             entrada.target.classList.add('visible');
-            // Dejamos de observarla para que la animación no se repita al subir
             observador.unobserve(entrada.target);
         }
     });
 }, {
-    threshold: 0.15 // Se activa cuando el 15% de la tarjeta entra en pantalla
+    threshold: 0.1
 });
 
-// Le indicamos al observador que vigile cada una de las tarjetas
 elementosAnimar.forEach(elemento => {
     observador.observe(elemento);
 });

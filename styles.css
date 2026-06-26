@@ -478,6 +478,170 @@ body::after {
     line-height: 1.5;
 }
 
+/* === SERVICIOS === */
+.servicios { text-align: left; }
+
+.servicios-header { margin-bottom: 56px; }
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card-servicio {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    transition: var(--transition);
+}
+
+.card-servicio:hover {
+    border-color: var(--border-neon);
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+}
+
+.servicio-icono {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.card-servicio h4 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.card-servicio p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* === MEMBRESÍAS === */
+.precios { text-align: left; }
+
+.precios-header { margin-bottom: 48px; }
+
+.grid-precios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.grid-precios-base {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+}
+
+.precios-divider-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 40px 0 20px;
+}
+
+.card-precio {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-precio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--border-subtle);
+    transition: var(--transition);
+}
+
+.card-precio.destacado {
+    border-color: var(--border-neon);
+    background: #0d0d0d;
+}
+
+.card-precio.destacado::before {
+    background: var(--neon);
+    box-shadow: 0 0 20px var(--neon-glow);
+}
+
+.card-precio:hover {
+    border-color: var(--border-neon);
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+}
+
+.card-precio:hover::before { background: var(--neon); }
+
+.badge-popular {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    background: var(--neon);
+    padding: 4px 10px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+}
+
+.card-precio h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+}
+
+.precio {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    color: var(--neon);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+}
+
+.precio span {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.precio-equiv {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.nota {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+    line-height: 1.5;
+}
+
 /* === FOOTER === */
 .contacto {
     background: #050505;
@@ -587,7 +751,8 @@ body::after {
 .card,
 .card-precio,
 .galeria-item,
-.sucursal-banner {
+.sucursal-banner,
+.card-servicio {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.65s ease-out, transform 0.65s ease-out;
@@ -596,7 +761,8 @@ body::after {
 .card.visible,
 .card-precio.visible,
 .galeria-item.visible,
-.sucursal-banner.visible {
+.sucursal-banner.visible,
+.card-servicio.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -613,6 +779,10 @@ body::after {
 .card-precio:nth-child(2) { transition-delay: 0.12s; }
 
 /* === RESPONSIVE === */
+@media (max-width: 1100px) {
+    .grid-precios { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
     .navbar { padding: 0 20px; }
 
@@ -632,6 +802,8 @@ body::after {
         grid-column: span 1;
         aspect-ratio: 4/3;
     }
+
+    .grid-servicios { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -647,6 +819,10 @@ body::after {
         padding: 12px 18px;
         font-size: 0.8rem;
     }
+
+    .grid-servicios { grid-template-columns: 1fr; }
+    .grid-precios { grid-template-columns: 1fr; }
+    .grid-precios-base { grid-template-columns: 1fr; max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
