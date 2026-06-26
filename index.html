@@ -3,92 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fit Live Elite Gym</title>
+    <title>Fit Live Elite Gym — Tu mejor versión empieza aquí</title>
+    <meta name="description" content="Fit Live Elite: gimnasio premium en Cd. Nezahualcóyotl. Membresías desde $350/mes. Equipamiento de primer nivel.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Barra de Navegación -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <img src="image_bb3645.png" alt="Fit Live Elite Logo" class="logo">
         <div class="social-nav">
-            <a href="https://www.facebook.com/fitlivegymelite/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/fitlive.elite/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/fitlivegymelite/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/fitlive.elite/" target="_blank" rel="noopener">Instagram</a>
         </div>
     </nav>
 
-    <!-- Encabezado Principal (Promoción) -->
+    <!-- Hero -->
     <header class="hero">
         <div class="hero-content">
-            <h1>¡TU PRIMER MES 2 X $590!</h1>
-            <p>Promoción exclusiva de nuevo ingreso. Únete al mejor ambiente.</p>
+            <span class="hero-eyebrow">✦ Promoción de Nuevo Ingreso</span>
+            <h1>TU PRIMER MES<br>2 × $590</h1>
+            <p>Únete al ambiente donde los resultados se forjan. Equipamiento de primer nivel, comunidad real.</p>
+            <a href="https://wa.me/525580378013?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20la%20promoci%C3%B3n" class="hero-cta" target="_blank" rel="noopener">
+                Quiero unirme →
+            </a>
         </div>
     </header>
 
-    <!-- Anuncio de Nueva Sucursal -->
+    <!-- Nueva Sucursal -->
     <section class="nueva-sucursal">
         <div class="sucursal-banner card">
-            <h2>¡PRÓXIMAMENTE NUEVA SUCURSAL!</h2>
-            <p>Estamos creciendo para ti. Encuéntranos muy pronto en nuestra nueva ubicación:</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=19°24'28.3%22N+99°04'01.6%22W" target="_blank" class="btn-ubicacion">📍 Ver en el mapa</a>
+            <div class="sucursal-texto">
+                <h2>¡PRÓXIMAMENTE NUEVA SUCURSAL!</h2>
+                <p>Seguimos creciendo para ti. Pronto abriremos las puertas de nuestra nueva ubicación.</p>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&query=19°24'28.3%22N+99°04'01.6%22W" target="_blank" rel="noopener" class="btn-ubicacion">
+                📍 Ver en el mapa
+            </a>
         </div>
     </section>
 
-    <!-- Sección de Instalaciones (Galería de Fotos) -->
-    <section class="instalaciones">
-        <h2>Conoce Nuestras <span>Instalaciones</span></h2>
-        <p>Equipamiento de primer nivel para llevar tu entrenamiento al máximo.</p>
+    <!-- Instalaciones -->
+    <section class="section instalaciones">
+        <div class="instalaciones-header">
+            <span class="section-label">Nuestro espacio</span>
+            <h2 class="section-title">Instalaciones <span>de Élite</span></h2>
+            <p class="section-subtitle">Equipamiento de primer nivel para llevar tu entrenamiento al máximo potencial.</p>
+        </div>
         <div class="galeria-grid">
-            <img src="image_bb3608.jpg" alt="Zona de Caminadoras" class="galeria-img card">
-            <img src="image_bb3625.jpg" alt="Zona de Elípticas" class="galeria-img card">
-            <img src="image_bb3640.jpg" alt="Peso Libre y Pierna" class="galeria-img card">
-            <img src="image_bb3662.jpg" alt="Aparatos del Tren Superior" class="galeria-img card">
+            <div class="galeria-item card">
+                <img src="image_bb3608.jpg" alt="Zona de Caminadoras" class="galeria-img">
+            </div>
+            <div class="galeria-item card">
+                <img src="image_bb3625.jpg" alt="Zona de Elípticas" class="galeria-img">
+            </div>
+            <div class="galeria-item card">
+                <img src="image_bb3640.jpg" alt="Peso Libre y Pierna" class="galeria-img">
+            </div>
+            <div class="galeria-item card">
+                <img src="image_bb3662.jpg" alt="Aparatos del Tren Superior" class="galeria-img">
+            </div>
         </div>
     </section>
 
-    <!-- Sección de Precios -->
-    <section class="precios">
-        <h2>Nuestras <span>Membresías</span></h2>
+    <hr class="divisor">
+
+    <!-- Membresías -->
+    <section class="section precios">
+        <div class="precios-header">
+            <span class="section-label">Acceso sin límites</span>
+            <h2 class="section-title">Elige tu <span>Membresía</span></h2>
+            <p class="section-subtitle">Sin contratos forzosos. Sin pretextos. Solo tú y tus metas.</p>
+        </div>
         <div class="grid-precios">
             <div class="card-precio">
                 <h3>Estudiantes</h3>
                 <p class="precio">$350<span>/mes</span></p>
-                <p class="nota">*Horario exclusivo de 12 pm a 5 pm</p>
+                <p class="nota">⏰ Horario exclusivo de 12:00 pm a 5:00 pm con credencial vigente.</p>
             </div>
             <div class="card-precio destacado">
+                <span class="badge-popular">Más popular</span>
                 <h3>Mensualidad</h3>
                 <p class="precio">$450<span>/mes</span></p>
-                <p class="nota">Acceso total en horario regular</p>
+                <p class="nota">✓ Acceso total en horario regular. Sin restricciones.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer con Información de Contacto -->
+    <!-- Footer -->
     <footer class="contacto">
-        <div class="info-footer">
-            <div>
-                <img src="image_bb3645.png" alt="Fit Live Elite" class="logo-footer">
+        <div class="footer-inner">
+            <div class="info-footer">
+                <div>
+                    <img src="image_bb3645.png" alt="Fit Live Elite" class="logo-footer">
+                </div>
+                <div>
+                    <h3>Horarios</h3>
+                    <p>
+                        Lunes a Viernes: 6:00 am — 11:00 pm<br>
+                        Sábados: 8:00 am — 3:00 pm<br>
+                        Domingos: 8:00 am — 2:00 pm
+                    </p>
+                </div>
+                <div>
+                    <h3>Ubicación Actual</h3>
+                    <p>
+                        Calle 6 Esq. Valle de Bravo 42, El Barco<br>
+                        C.P. 57400, Cd. Nezahualcóyotl, Méx.
+                    </p>
+                </div>
             </div>
-            <div>
-                <h3>Horarios</h3>
-                <p>Lunes a Viernes: 6:00 am - 11:00 pm</p>
-                <p>Sábados: 8:00 am - 3:00 pm</p>
-                <p>Domingos: 8:00 am - 2:00 pm</p>
-            </div>
-            <div>
-                <h3>Ubicación Actual</h3>
-                <p>Calle 6 Esquina, Valle de Bravo 42, El Barco</p>
-                <p>C.P. 57400, Cdad. Nezahualcóyotl, Méx.</p>
+            <div class="footer-bottom">
+                <p>© 2025 Fit Live Elite Gym. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/fitlivegymelite/" target="_blank" rel="noopener">Facebook</a>
+                    <a href="https://www.instagram.com/fitlive.elite/" target="_blank" rel="noopener">Instagram</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/525580378013?text=Hola,%20quiero%20informaci%C3%B3n" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/525580378013?text=Hola,%20quiero%20informaci%C3%B3n" class="whatsapp-float" target="_blank" rel="noopener">
         💬 WhatsApp
     </a>
 
-    <!-- Conexión con el archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
