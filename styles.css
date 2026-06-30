@@ -229,79 +229,6 @@ body::after {
     font-weight: 300;
 }
 
-/* === NUEVA SUCURSAL === */
-.nueva-sucursal {
-    padding: 0 24px 80px;
-    max-width: 1160px;
-    margin: 0 auto;
-}
-
-.sucursal-banner {
-    background: var(--neon);
-    border-radius: var(--radius-lg);
-    padding: 60px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    position: relative;
-    overflow: hidden;
-}
-
-.sucursal-banner::before {
-    content: 'PRÓXIMAMENTE';
-    position: absolute;
-    right: -30px;
-    top: 50%;
-    transform: translateY(-50%) rotate(90deg);
-    font-family: var(--font-display);
-    font-size: 7rem;
-    color: rgba(0, 0, 0, 0.06);
-    white-space: nowrap;
-    pointer-events: none;
-    letter-spacing: 0.04em;
-}
-
-.sucursal-texto h2 {
-    font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    color: #000;
-    line-height: 1;
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
-}
-
-.sucursal-texto p {
-    font-size: 1rem;
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: 400;
-    max-width: 400px;
-}
-
-.btn-ubicacion {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 16px 32px;
-    background: #000;
-    color: var(--neon);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.btn-ubicacion:hover {
-    background: #111;
-    transform: scale(1.03);
-}
-
 /* === INSTALACIONES === */
 .instalaciones { text-align: left; }
 
@@ -779,7 +706,6 @@ body::after {
 .card,
 .card-precio,
 .galeria-item,
-.sucursal-banner,
 .card-servicio {
     opacity: 0;
     transform: translateY(40px);
@@ -789,7 +715,6 @@ body::after {
 .card.visible,
 .card-precio.visible,
 .galeria-item.visible,
-.sucursal-banner.visible,
 .card-servicio.visible {
     opacity: 1;
     transform: translateY(0);
@@ -818,12 +743,6 @@ body::after {
     .info-footer {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-
-    .sucursal-banner {
-        padding: 40px 28px;
-        flex-direction: column;
-        align-items: flex-start;
     }
 
     .galeria-grid { grid-template-columns: 1fr; }

@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // === Animaciones de entrada con Intersection Observer ===
-const elementosAnimar = document.querySelectorAll('.card, .card-precio, .galeria-item, .sucursal-banner, .card-servicio');
+const elementosAnimar = document.querySelectorAll('.card, .card-precio, .galeria-item, .card-servicio');
 
 const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
